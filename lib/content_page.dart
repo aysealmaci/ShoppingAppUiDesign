@@ -27,8 +27,8 @@ class ContentPage extends StatelessWidget {
                 height: 200,
                 child: Container(
                   height: 1000,
-                  child: Image.asset('assets/nike.jpg',
-                      height: 1, width: double.infinity),
+                  child: Image.asset('assets/shoes.jpg',
+                      height: 7, width: double.infinity),
                 )),
           ),
           SizedBox(
@@ -55,15 +55,24 @@ class ContentPage extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: RowWidget(),
+                    child: RowWidget(
+                      detail: "2020",
+                      detailtitle: "Realase",
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: RowWidget(),
+                    child: RowWidget(
+                      detailtitle: "Color",
+                      detail: "Purple",
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: RowWidget(),
+                    child: RowWidget(
+                      detail: "40",
+                      detailtitle: "Size",
+                    ),
                   ),
                 ],
               ),
@@ -76,8 +85,13 @@ class ContentPage extends StatelessWidget {
 }
 
 class RowWidget extends StatelessWidget {
+  final String detail;
+
+  final String detailtitle;
   const RowWidget({
     Key? key,
+    required this.detail,
+    required this.detailtitle,
   }) : super(key: key);
 
   @override
@@ -85,16 +99,14 @@ class RowWidget extends StatelessWidget {
     return Row(
       children: [
         Text(
-          "Realase",
+          detailtitle,
           style: TextStyle(
               fontWeight: FontWeight.bold,
               color: Color.fromARGB(255, 168, 168, 168)),
         ),
-        SizedBox(
-          width: 250,
-        ),
+        SizedBox(width: MediaQuery.of(context).size.width * 0.70),
         Text(
-          "2018-08-22",
+          detail,
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         )
       ],
