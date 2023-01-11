@@ -7,7 +7,9 @@ class ContentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size appSize = MediaQuery.of(context).size;
+
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 119, 90, 159),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         leading: Icon(
@@ -17,68 +19,56 @@ class ContentPage extends StatelessWidget {
       body: SingleChildScrollView(
           child: Column(
         children: [
-          Stack(
-            alignment: Alignment.bottomCenter,
-            children: [
-              Container(
-                  color: Color.fromARGB(97, 180, 93, 93),
-                  width: appSize.width,
-                  height: appSize.height,
-                  child: Container(
-                    height: 100,
-                    child: Image.asset('assets/5.jpg',
-                        height: 1, width: double.infinity),
-                  )),
-              Container(
-                height: appSize.height * 0.45,
-                decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 241, 219, 227),
-                    borderRadius: BorderRadius.circular(40)),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "Product Details",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: RowWidget(),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: RowWidget(),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: RowWidget(),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
+          Padding(
+            padding: const EdgeInsets.only(top: 100),
+            child: Container(
+                color: Color.fromARGB(255, 119, 90, 159),
                 width: appSize.width,
-                height: appSize.height * 0.2,
-                decoration: BoxDecoration(
-                  color: Colors.purple,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.zero,
-                    bottomRight: Radius.zero,
-                    topLeft: Radius.circular(40.0),
-                    topRight: Radius.circular(40.0),
+                height: 200,
+                child: Container(
+                  height: 1000,
+                  child: Image.asset('assets/nike.jpg',
+                      height: 1, width: double.infinity),
+                )),
+          ),
+          SizedBox(
+            height: 100,
+          ),
+          Container(
+            height: 400,
+            decoration: BoxDecoration(
+                color: Color.fromARGB(255, 241, 219, 227),
+                borderRadius: BorderRadius.circular(40)),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 30,
                   ),
-                ),
+                  Text(
+                    "Product Details",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: RowWidget(),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: RowWidget(),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: RowWidget(),
+                  ),
+                ],
               ),
-            ],
-          )
+            ),
+          ),
         ],
       )),
     );
