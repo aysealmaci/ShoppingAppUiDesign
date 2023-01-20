@@ -22,13 +22,13 @@ class ContentPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 100),
             child: Container(
-                color: Color.fromARGB(255, 119, 90, 159),
+                color: Color.fromARGB(255, 223, 176, 0),
                 width: appSize.width,
-                height: 200,
+                height: 400,
                 child: Container(
-                  height: 1000,
-                  child: Image.asset('assets/shoes.jpg',
-                      height: 7, width: double.infinity),
+                  height: appSize.height,
+                  child: Image.asset('assets/nike.jpg',
+                      fit: BoxFit.fill, height: 60, width: appSize.width / 2),
                 )),
           ),
           SizedBox(
